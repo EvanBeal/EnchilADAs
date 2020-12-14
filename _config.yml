@@ -17,7 +17,6 @@ author: Evan Beal, Eric Bergkvist & Maxime Delitroz
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  Story: "index"
   About Us: "aboutus"
   Resources:
     - Tesco paper: "https://www.nature.com/articles/s41597-020-0397-7"
