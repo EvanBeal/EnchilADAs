@@ -20,7 +20,7 @@ subtitle: Analysis of Tesco and socio-economic data of Londoners
 ### First look of the correlation between the items bought in Tesco stores and the ethnicities of the different area
 - heatmap of the correlation of items vs ethnicities 
 - OR barplot of correlation with the ethnicities on x-axis and the items as slide bar or dropdown menu (or the opposite) 
-{% include corr_bar_plot.html %}
+{% include corr_bar_plot_all_items.html %}
 
 It appears that indeed the items bought in Tesco store may depend on your ethnicity. 
 
