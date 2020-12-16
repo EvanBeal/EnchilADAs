@@ -50,7 +50,12 @@ Many factors in addition to your ethnicity may be linked in fact to your food ha
 #### Socio-economic factors
 {% include map_socio_eco.html %}
 
-#### How richness, employment rate and the average age of the area are linked to diversity of food consumption and ethnicity?
+### How richness, employment rate and the average age of the area are linked to diversity of food consumption and ethnicity?
+
+#### Linear Regression
+{% include reg_plot.html %}
+
+#### How those features are linked together
 {% include rich_employ_age_hit_hethn.html %}
 
 The richer you are the less diverse you eat? Let us doubt about it.
