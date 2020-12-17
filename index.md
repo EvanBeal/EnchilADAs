@@ -31,10 +31,10 @@ This is something that we can also try to assess visually using the following tw
 You can try to look at the correlated combination and see if it shows some visual correspondance on the maps. 
 
 #### Food consumption in London
-{% include map_food.html %}
+{% include map_food.html %} {% include map_ethnicity.html %}
 
 #### Ethnic groups in London
-{% include map_ethnicity.html %}
+
 
 However, to determine if there is a real effect, it's really not enough to consider only this correlation study and the visualization. 
 A more complex study should be performed considering other socio-economic factors. 
