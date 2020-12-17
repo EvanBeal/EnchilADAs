@@ -30,11 +30,11 @@ It appears that indeed the items bought in Tesco store may depend on your ethnic
 This is something that we can also try to assess visually using the following two maps representing the ethnicities of the Londoners and their food consumption.
 You can try to look at the correlated combination and see if it shows some visual correspondance on the maps. 
 
-#### Food consumption in London
+#### Food Purchase in London
 {% include map_food_small.html %} 
-{% include map_ethnicity_small.html %}
 
 #### Ethnic groups in London
+{% include map_ethnicity_small.html %}
 
 
 However, to determine if there is a real effect, it's really not enough to consider only this correlation study and the visualization. 
