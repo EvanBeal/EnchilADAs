@@ -48,9 +48,6 @@ The same has to be done with the items bought to Tesco resulting to a feature of
 ### Which factors may also be linked to the diversity of food consumption?
 Many factors in addition to your ethnicity may be linked in fact to your food habits. We can mention for instance, your age, your salary, whether or not you have a job or whether or not you are in good health. These factors have to be considered in our study to not draw causal links that may have been explained in fact by one of those factors.
 
-#### Socio-economic factors
-{% include map_socio_eco.html %}
-
 ### How richness, employment rate and the average age of the area are linked to diversity of food consumption and ethnicity?
 
 #### Linear Regression
