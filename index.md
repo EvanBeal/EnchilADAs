@@ -59,6 +59,10 @@ Many factors in addition to your ethnicity may be linked in fact to your food ha
 ### Causality analysis 
 {% include corr_caus_rank.html %}
 
+{% include caus_bar_plot_all_items.html %}
+
+{% include caus_bar_plot_all_eth.html %}
+
 ### Causal curve for some Tesco items
 {% include cdcr_items.html %}
 
