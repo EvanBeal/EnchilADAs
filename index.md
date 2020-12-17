@@ -58,6 +58,9 @@ Many factors in addition to your ethnicity may be linked in fact to your food ha
 #### How those features are linked together
 {% include rich_employ_age_hit_hethn.html %}
 
+### Causality analysis 
+{% include corr_caus_rank.html %}
+
 The richer you are the less diverse you eat? Let us doubt about it.
 This may have something to do with the **representativeness** of the Tesco data. Indeed, they may be the leader for groceries in UK, they still don't have the food market monopoly.
 Of course, on one hand we want the Tesco data to be as representative as possible than the food consumption of the Londoners. However, on the other hand we also want to have enough areas to consider in the study to obtain results with a greater power. 
