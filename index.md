@@ -33,7 +33,7 @@ Throughout this datastory, you will have the opportunity to observe the links be
 It appears that indeed the items bought in Tesco store may depend on your ethnicity. 
 
 ### Map visualization of the correlation
-This is something that we can also try to assess visually using the following two maps representing the ethnicities of the Londoners and their food consumption.
+This is something that we can also try to assess visually using the following two maps representing the ethnicities of the Londoners and their food purchase in Tesco.
 You can try to look at the correlated combination and see if it shows some visual correspondance on the maps. 
 
 #### Food Purchase in London
