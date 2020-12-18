@@ -20,7 +20,7 @@ This dataset has been proven to be ecologically valid by comparing the food purc
 ## How can we determine the effect of ethnicity on food purchase?
 Our main question of interest being to find out whether our roots influenced our way of shopping in Tesco stores, two main analyses have to be performed in order to identify potential **correlation** and **causality** between the ethnicity and the food items purchased. 
 
-Throughout this datastory, you will have the opportunity to observe the links between the different combination of ethnicities and food categories purchased, guided by the main results we obtained, in order to establish whether some food purchase patterns that appear to be specific of a certain ethnicity.  
+Throughout this datastory, you will have the opportunity to observe the links between the different combination of ethnicities and food categories purchased, guided by the main results we obtained, in order to establish some food purchase patterns that appear to be specific of certain ethnicities.  
 
 ## Correlation analysis
 ### Correlation of ethnicities with food categories purchased in Tesco
