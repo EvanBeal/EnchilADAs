@@ -38,11 +38,11 @@ Those two first figures allow to visualize how the prevalence of certain ethnic 
 {% include corr_bar_plot_all_eth.html %}
 
 We can indeed see that the composition of the typical shopping cart is linked with how much certain ethnic groups are represented in the area where the purchases are carried. Looking at our three features pairs of interest, what we can conclude from those plots is that:
-- The white ethnicity is positively correlated with the fraction of food products represented by the ready made meal category. This means that the more the white ethnicity is represented in an area the more important the place of the ready made meal will be in the shopping cart of the Tesco customers. 
+- The white ethnicity is positively correlated with the fraction of food products represented by the ready made meal category. This means that a higher representation of the white ethnicity is typically linked to a higher representation of ready mad meal in shopping car of Tesco customers. 
 
-- The black ethnicity is negatively correlated with the fraction of fruits and vegetables. The percentage of fruits and vegetables in the food products purchased decreases the more the black ethnicity is represented in an area.
+- The black ethnicity is negatively correlated with the fraction of fruits and vegetables. A higher representation of the black ethnicity is typically linked to a lower representation of fruits and vegetables in the food produducts.
 
-- The asian ethnicity is positively correlated with the percentage of fats and oils purchased, indicating that a higher representativity of the asian ethnicity in an area will lead to a greater purchase of fats and oils in comparison to the other food products categories. 
+- The asian ethnicity is positively correlated with the percentage of fats and oils purchased,a higher representation of the asian ethnicity is linked with a higher representation of fats and oils in comparison to the other food products categories.
 
 ### Map visualization of the correlation
 We can also try to assess the correlation visually by comparing how the ethnicities are represented in the different areas of London and how the fraction of products category purchased vary on maps of the London LSOA. 
@@ -54,7 +54,7 @@ You can try to look at some combinations of the correlated features and see if v
 #### Ethnic groups in London
 {% include map_ethnicity_small.html %}
 
-Considering the white ethnicity and the fraction ready made meals, the positive correlation can be indeed well observed. It appears that the fraction of read made meals purchased in Tesco increases the further away from the center of London you go, especially in the South and East suburbs where we can also observe areas with a high percentage of population having a white ethnicity.
+Considering the white ethnicity and the fraction ready made meals, the positive correlation can be indeed well observed. It appears that the fraction of ready made meals purchased in Tesco increases the further away from the center of London you go, especially in the South and East suburbs where we can also observe areas with a high percentage of population having a white ethnicity.
 
 However, to determine if there is a real causality effect and being able to establish whether our ethnicity is really reflected in some of the products categories we purchased, it's really not enough to consider only this **correlation** study and the visualization. For example, in some cases two features can be highly correlated, but because of the presence of one or more confounders, no causal link can be established. A confounder can be described as a variable that influences the two features for which we are interested to dermine a causality link, causing a spurious association misleading the analysis.
 Therefore, a more complex study should be performed, accounting for those factors and which will be this time a **causality** study.
