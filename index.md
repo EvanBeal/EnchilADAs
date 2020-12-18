@@ -15,25 +15,29 @@ To determine whether our ethnicity is one of the factor that could influence our
 ## Tesco, "Every little helps"  
 With this slogan, Tesco wants to be close to the population. This is one of the reason that allowed this British groceries and general merchandise retailer to become a multinational and the market leader of groceries in UK with more than a quarter of the market share. This position of leader renders the data of its customer really valuable to link food purchases to a number of socio-economic factors. That's why the Tesco Grocery 1.0 dataset, a record of the food items purchased by 1.6 M Tesco customers, came out with a great interest to perform multiple studies. 
 
-This dataset has been proven to be ecologically valid by comparing the food purchases with metabolic syndrome conditions that are strongly linked to food consumption habits, in the paper ["Tesco Grocery 1.0, a large-scale dataset of grocery purchases in London"](https://www.nature.com/articles/s41597-020-0397-7). Therefore, we will use some features of this dataset (the fractions of food product categories, per area) to identify whether the food basket of the Tesco customers is the reflect of their ethnicity.
+This dataset has been proven to be ecologically valid by comparing the food purchases with metabolic syndrome conditions that are strongly linked to food consumption habits, in the paper ["Tesco Grocery 1.0, a large-scale dataset of grocery purchases in London"](https://www.nature.com/articles/s41597-020-0397-7). We extend it with the LSOA atlas (https://data.london.gov.uk/dataset/lsoa-atlas), an official dataset reporting sensus data at LSOA level, which gives us information on the distributions of different ethnic groups accross London. Using both those sources, we will try to see if the prevalence of different ethnic groups have an impact on the content of the food basket of Tesco's customer.
 
 ## How can we determine the effect of ethnicity on food purchase?
-Our main question of interest being to find out whether our roots influenced our way of shopping in Tesco stores, two main analyses have to be performed in order to identify potential **correlation** and **causality** between the ethnicity and the food items purchased. 
+Our main question of interest being to find out whether the appartenance of customer to a certain ethnic group influence their way of shopping in Tesco stores, two main analyses have to be performed in order to identify potential **correlation** and **causality** between the ethnicity and the food products purchased. 
 
-Throughout this datastory, you will have the opportunity to observe the links between the different combination of ethnicities and food categories purchased, guided by the main results we obtained, in order to establish some food purchase patterns that appear to be specific of certain ethnicities.  
+Throughout this datastory, you will have the opportunity to observe the links between the different combination of ethnig groups prevalence and food categories purchased, guided by the main results we obtained, in order to establish some food purchase patterns that appear to be specific of certain ethnic groups.  
 
 ## Correlation analysis
 ### Correlation of ethnicities with food categories purchased in Tesco
 
 ### First look of the correlation between the items bought in Tesco stores and the ethnicities of the different area
+Those two first figure allows to visualize how the prevalence of certain ethnic groups correlate with the probability of certain products categories to appear in a typicall shopping cart. The two visualization allows to look at those data from different points of view:
+- How does the prevalence of a specific ethnic group correlate with the prevalence of the different product categories ?
+- How does the prevalence of a specific product category is correlated with the prevalences of the different ethnic groups ?
+
 {% include corr_bar_plot_all_items.html %}
 
 {% include corr_bar_plot_all_eth.html %}
 
-It appears that indeed the items bought in Tesco store may depend on your ethnicity. 
+We can indeed see that composition of the typicall shopping cart is indeed linked with how much certain ethnic groups are represented in the area where the purchases are carried
 
 ### Map visualization of the correlation
-This is something that we can also try to assess visually using the following two maps representing the ethnicities of the Londoners and their food purchase in Tesco.
+This is something that we can also try to assess visually by displaying the distribution of the different ethnicities and of the products category on maps of London. 
 You can try to look at the correlated combination and see if it shows some visual correspondance on the maps. 
 
 #### Food Purchase in London
@@ -50,7 +54,7 @@ The same has to be done with the items bought to Tesco resulting to a feature of
 ## Causality analysis 
 
 ### Which factors may also be linked to the diversity of food purchase?
-Many factors in addition to your ethnicity may be linked in fact to your food habits. We can mention for instance, your age, your salary, whether or not you have a job or whether or not you are in good health. These factors have to be considered in our study to not draw causal links that may have been explained in fact by one of those factors.
+Many factors in addition to the appartenance to a specific ethnic group may be linked in fact to your food habits. We can mention for instance, your age, your salary, whether or not you have a job or whether or not you are in good health. These factors have to be considered in our study to not draw causal links that may have been explained in fact by one of those factors.
 
 ### How richness, employment rate and the average age of the area are linked to diversity of food consumption and ethnicity?
 
