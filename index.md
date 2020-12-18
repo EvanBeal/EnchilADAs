@@ -18,7 +18,9 @@ With this slogan, Tesco wants to be close to the population. This is one of the 
 This dataset has been proven to be ecologically valid by comparing the food purchases with metabolic syndrome conditions that are strongly linked to food consumption habits, in the paper ["Tesco Grocery 1.0, a large-scale dataset of grocery purchases in London"](https://www.nature.com/articles/s41597-020-0397-7). Therefore, we will use some features of this dataset (the fractions of food product categories, per area) to identify whether the food basket of the Tesco customers is the reflect of their ethnicity.
 
 ## How can we determine the effect of ethnicity on food purchase?
-Our main question of interest being to find out whether our roots influenced our way of shopping in Tesco stores, two main analyses have to be performed in order to identify potential **correlation** and **causality** between the ethnicity and the food items purchased. That's why, throughout this datastory, you will have the opportunity to observe the links between the different combination of ethnicities and food categories purchased, guided by the main results we obtained, in order to establish whether some food purchase patterns that appear to be specific of a certain ethnicity.  
+Our main question of interest being to find out whether our roots influenced our way of shopping in Tesco stores, two main analyses have to be performed in order to identify potential **correlation** and **causality** between the ethnicity and the food items purchased. 
+
+Throughout this datastory, you will have the opportunity to observe the links between the different combination of ethnicities and food categories purchased, guided by the main results we obtained, in order to establish whether some food purchase patterns that appear to be specific of a certain ethnicity.  
 
 ## Correlation analysis
 ### Correlation of ethnicities with food categories purchased in Tesco
