@@ -5,6 +5,21 @@ cover-img: "/assets/img/fish_chips.jpg"
 subtitle: Analysis of Tesco and socio-economic data of Londoners
 ---
 
+## London, a city of diversity
+London is one of the most populated cities in Europe. With almost 9 millions of inhabitants, the population comes from all walks of life. Therefore, a great heterogeneity appears between the Londoners, which can be mirrored at the level of their age, financial means or origins and ethnicities for instance.
+
+This heterogeneity can be pictured with the different areas of the city. Indeed, living close to Buckingham Palace and being in daily contact with the Queen and the Prime Minister  would be accessible to a population with really significant financial means, resulting in less heterogeneity in this district from an economic viewpoint. In contrary, we can easily imagine that living in the suburbs offer some great advantages to a wide range of people, resulting in areas with really diverse inhabitants. 
+
+To determine whether our ethnicity is one of the factor that could influence our food purchase, we would like to capture this heterogeneity present in the different areas of the city. Therefore, the analysis has to be done at the area level and many possibilities appear to subdivide London into different districts. One can consider the 32 Boroughs for example. However, those areas are very large (from 150k to 300k inhabitants) and may not be really representative of everyone's diversity. That's why we decided to conduct our analysis at the Lower Super Output Area (LSOA) level, the finest subdivision of the city possible. Those 4'833 areas have an average population smaller than 2k and therefore offer a great resolution to link the food purchase to the diversity of the Londoners. 
+
+## Tesco, "Every little helps"  
+With this slogan, Tesco wants to be close to the population. This is one of the reason that allows this British groceries and general merchandise retailer to become a multinational and the market leader of groceries in UK with more than a quarter of the market share. This position of leader renders the data of its customer really valuable to link food purchases to a number of socio-economic factors. That's why the Tesco Grocery 1.0 dataset, a record of the food items purchased by 1.6 M Tesco customers, came out with a great interest to perform multiple studies. 
+
+This dataset has been proven to be ecologically valid by comparing the food purchases with metabolic syndrome conditions that are strongly linked to food consumption habits, in the paper "Tesco Grocery 1.0, a large-scale dataset of grocery purchases in London" (https://www.nature.com/articles/s41597-020-0397-7). Therefore, we will use some features of this dataset (the fractions of food product categories, per area) to identify whether the food basket of the Tesco customers is the reflect of their ethnicity.
+
+
+
+
 - Does ethnic diversity have an effect on food consumption at area level? 
 - And if yes, what is its nature? 
 - To which extent is the ethnic diversity responsible for the food consumption diversity of some aliment categories? 
@@ -12,14 +27,7 @@ subtitle: Analysis of Tesco and socio-economic data of Londoners
 
 ## Story Plan
 
-### Introduction
-- Speak about the data considered
-- How we get to this problematic 
-- How we will try to determine if it's really the case 
-
 ### First look of the correlation between the items bought in Tesco stores and the ethnicities of the different area
-- heatmap of the correlation of items vs ethnicities 
-- OR barplot of correlation with the ethnicities on x-axis and the items as slide bar or dropdown menu (or the opposite) 
 {% include corr_bar_plot_all_items.html %}
 
 {% include corr_bar_plot_all_eth.html %}
