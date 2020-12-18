@@ -28,7 +28,7 @@ Following the common thread of our analysis based on the following pairs of feat
 ### Correlation of ethnicities with food categories purchased in Tesco
 To begin our analysis, we want to see if there are some relations between the different product categories and the ethnic groups. A simple approach to look if some relations exist between two features is to look at their correlation. Indeed, if there is no correlation between them, we can't expect any causal relations to be present. Therefore, with this first outlook, we get an idea on a potential reflect of the ethnicity on food purchase and even more precisely if there is some postive or negative links between the ethnicities and the food categories purchased in Tesco. 
 
-### First look of the correlation between the items bought in Tesco stores and the ethnicities of the different area
+### First look of the correlation between the items bought in Tesco stores and the ethnicities of the different areas
 Those two first figures allow to visualize how the prevalence of certain ethnic groups correlate with the probability of certain products categories to appear in a typical shopping cart. The two visualizations allow to look at those data from different points of view:
 - How does the prevalence of a specific ethnic group correlate with the prevalence of the different product categories ?
 {% include corr_bar_plot_all_items.html %}
@@ -38,11 +38,11 @@ Those two first figures allow to visualize how the prevalence of certain ethnic 
 {% include corr_bar_plot_all_eth.html %}
 
 We can indeed see that the composition of the typical shopping cart is linked with how much certain ethnic groups are represented in the area where the purchases are carried. Looking at our three features pairs of interest, what we can conclude from those plots is that:
-- The white ethnicity is positively correlated with the fraction of food products represented by the ready made meal category. This means that a higher representation of the white ethnicity is typically linked to a higher representation of ready mad meal in shopping car of Tesco customers. 
+- The white ethnicity is positively correlated with the fraction of food products represented by the ready made meal category. This means that a higher representation of the white ethnicity is typically linked to a higher representation of ready made meal in shopping cart of Tesco customers. 
 
-- The black ethnicity is negatively correlated with the fraction of fruits and vegetables. A higher representation of the black ethnicity is typically linked to a lower representation of fruits and vegetables in the food produducts.
+- The black ethnicity is negatively correlated with the fraction of fruits and vegetables. A higher representation of the black ethnicity is typically linked to a lower representation of fruits and vegetables in the food products.
 
-- The asian ethnicity is positively correlated with the percentage of fats and oils purchased,a higher representation of the asian ethnicity is linked with a higher representation of fats and oils in comparison to the other food products categories.
+- The asian ethnicity is positively correlated with the percentage of fats and oils purchased, a higher representation of the asian ethnicity is linked with a higher representation of fats and oils in comparison to the other food products categories.
 
 ### Map visualization of the correlation
 We can also try to assess the correlation visually by comparing how the ethnicities are represented in the different areas of London and how the fraction of products category purchased vary on maps of the London LSOA. 
@@ -75,31 +75,31 @@ Let's explore how some of those factors are linked to diversity of ethnicity and
 
 To get an idea of the effect of those different features on food purchase diversity (the richness feature being the median income per household of the area), we can analyze the results obtained with a linear regression analysis. This technique allows to observe the linear relationship between the features, as well as how precisely the food purchase diversity values can be predicted using one or a combination of features.
 
-This is what is represented with the following. It allows to observe the results of a linear regression between the food purchase diversity and the selected features. The scatter plot allows to get a first sense on how well the given features can predict this diversity feature and the bar plot allows to assess statistically the results observed with the coefficient of determination of the model. This value is equal to one if a perfect linear relationship exists between the features. 
+This is what is represented with the following plot. It allows to observe the results of a linear regression between the food purchase diversity and the selected features. The scatter plot allows to get a first sense on how well the given features can predict this diversity feature and the bar plot allows to assess statistically the results observed with the coefficient of determination of the model. This value is equal to one if a perfect linear relationship exists between the features. 
 
 #### Linear Regression
 {% include reg_plot.html %}
 
-By testing the different combinations of features we can observe that the food purchase diversity is best predicted when using all the different features considered. Looking at the features individually, it can be seen that the median income feature allows to obtain the best prediction results, followed by the ethnicity diversity feature. This is interesting as it suggests that the diversity of ethnicity is a feature with a great linear relationship with the food purchase diversity but not the greatest relationship. That's why we need to consider those additional socio-economic factors to not conduct misleading interpretations of the results observed. 
+By testing the different combinations of features we can observe that the food purchase diversity is best predicted when using all the different features considered. Looking at the features individually, it can be seen that the median income feature allows to obtain the best prediction results, followed by the ethnic diversity feature. This is interesting as it suggests that the diversity of ethnicity is a feature with a great linear relationship with the food purchase diversity but not the greatest relationship. That's why we need to consider those additional socio-economic factors to not conduct misleading interpretations of the results observed. 
 
 Now that we have observed that a linear relationship exists between the food purchase diversity and median income, employment rate, age and ethnicity diversity, let's look at how those features interact together.
-With the following plot you can indeed see for example if the population of the richest areas of London will tend to buy products from many different food categories and if the inhabitants represent many different ethnicities or not. 
+With the following plot you can indeed observe some interactions and see for example if the population of the richest areas of London will tend to buy products from many different food categories and if the inhabitants represent many different ethnicities or not. 
 
 #### How those features are linked together
 {% include rich_employ_age_hit_hethn.html %}
 
 Really interesting results can be visualized with the richness feature. Indeed, it appears that the different categories of areas in term of median income per household are quite similarly distributed into the two diversity features. Recalling that a confounder is a variable that influences the two features for which we aim to identify a causality link, causing a wrong association, this is exactly what we observe with the richness feature, which explain why it's of great importance to consider those confounders into the causality analysis.
 
-### Causality between ethnicities diversity and food categories purchased diversity
+### Causality between ethnic diversity and food categories purchased diversity
 To remove the effect of the confounders and establish a causality link between features, we have used a method called Generalized Propensity Score (GPS) matching. This method allows to compare areas that appear to be quite similar except for the two features for which we aim to determine if a causality link exists. By comparing such areas together, it reduces the effect of the other features (potential confounders) on the causality link we look at. 
 
-Therefore, to determine if some causality exists between ethnicities diversity and food categories purchased diversity, we used this approach and consider the most correlated features to the food categories purchased diversity as potential confounders. Eventually, to assess the causality between the two features of interest and its significativity, we used a metric based on the 95% confidence interval of the causal curve obtained after the GPS matching. The more positive the feature, the more significant is the causality effect.
+Therefore, to determine if some causality exists between the ethnic diversity and the food categories purchased diversity, we used this approach and consider the most correlated features to the food categories purchased diversity as potential confounders. Eventually, to assess the causality between the two features of interest and its significativity, we used a metric based on the 95% confidence interval of the causal curve obtained after the GPS matching. The more positive the feature, the more significant is the causality effect.
 
 The results obtained with this approach suggest that ethnic diversity indeed has an effect on food product categories diversity.
 
 But is it the only feature with such an effect?
 
-Well, to determine this, we performed this process on all the features correlated to the food product categories diversity. The results are displayed in the following table where the features have been ranked by their absolute correlation with the food product categories diversity. The different information present on this table are the name of the feature, its correlation value, its causality significance value and their ranking for those different values. The difference in rank is computed by doing the rank of the correlation - the rank of the causality significance. It allows to observe that a high correlation does not necessarily mean that there will be a causality link between the variables. Eventually, the feature for which no causal effect has been observed appears in pink.
+Well, to determine this, we performed this process on all the features correlated to the food product categories diversity. The results are displayed in the following table where the features have been ranked by their absolute correlation with the food product categories diversity. The different information present on this table are the name of the features, their correlation value, their causality significance value and their ranking for those different values. The difference in rank is computed by doing the rank of the correlation - the rank of the causality significance. It allows to observe that a high correlation does not necessarily mean that there will be a causality link between the variables. Eventually, the features for which no causal effect have been observed appear in pink.
 
 {% include corr_caus_rank.html %}
 
@@ -118,7 +118,7 @@ Looking at the features we explored with the previous plots we can observe that:
 Now that we have clearly identified that the more diverse the population is (in terms of ethnicity), the more diverse the food purchase will be, let's get down to a finer level of granularity and come back to our main question of interest: Can the prevalence of a certain ethnic group cause a significative effect in purchased product diversity ?
 
 By using the GPS matching, accounting for the potential confounders, we computed the causal significance metric between the different ethnicities and food products categories. 
-Those results are represented in the following two graphs with once again two visualizations. One allowing to observe the causality links between a specific ethnicity and all the different product categories and the other allowing to observe what are the ethnicities that are causally linked to the food product chosen. In addition, to the causality significance metric, the correlation values computed previously are reported to observe whether the causality link is positive (cyan) or negative (red) and also to see that a high correlation is not necessary resulting into a high causality significance.
+Those results are represented in the following two graphs with once again two visualizations. One allowing to observe the causality links between a specific ethnicity and all the different product categories and the other allowing to observe what are the ethnicities that have a causal link with the food product chosen. In addition, to the causality significance metric, the correlation values computed previously are reported to observe whether the causality link is positive (cyan) or negative (red) and also to see that a high correlation is not necessary resulting into a high causality significance.
 
 {% include caus_bar_plot_all_items.html %}
 
@@ -136,9 +136,17 @@ To observe into details what those causal links look like, we can observe the ca
 
 {% include cdcr_items.html %}
 
-With the results obtained for the white ethnicity and the ready made meals category, we can observe for instance that an incrase from 45% to 80% of population from the white ethnic group leads to an increase from 6% to 7% in the proportion of the ready made meal in the food products category purchased in Tesco stores.
+With the results obtained for the white ethnicity and the ready made meals category, we can observe for instance that an increase from 45% to 80% of population from the white ethnic group leads to an increase from 6% to 7% in the proportion of the ready made meal in the food products category purchased in Tesco stores.
 
 ## Conclusion - Is your Ethnicity reflected in your Food Purchase?
 
+After a correlation and a causality analysis on the effect of ethnicity on food purchase habits at Tesco in London, we can now answer some key questions: 
 
+- Does ethnic diversity have an effect on food purchase diversity at area level?
+- And if yes, what is its nature?
+- To which extent are ethnicities responsible for the changes in some product categories purchases? Can we attribute particular food purchase habits to specific ethnic groups?
+
+As we observed a causal effect from the ethnicity diversity in a given area on the food purchase diversity, it suggests that the answer to the first question is yes. The positive correlation result ensures that the causal effect would be positive meaning that when the ethnicity diversity increases, the expected food purchase diversity in the same LSOA increases as well.
+
+Even though we have observed throughout this data story some causal effects of certain ethnicities proportions on certain purchased food categories proportions, we can't fully explain to which extent the causal observations are due to food purchase habits. Indeed, we only have data about Tesco purchases and some people might for example shop at multiple different stores. However, with the tools provided in this data story, you can play with the data and draw conclusions for Tesco customers.
 
