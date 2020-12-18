@@ -94,11 +94,33 @@ With the following plot you can indeed see for example if the population of the 
 Really interesting results can be visualized with the richness feature. Indeed, it appears that the different categories of areas in term of median income per household are quite similarly distributed into the two diversity features. Recalling that a confounder is a variable that influences the two features for which we aim to identify a causality link, causing a wrong association, this is exactly what we observe with the richness feature, which explain why it's of great importance to consider those confounders into the causality analysis.
 
 ### Causality between ethnicities diversity and food categories purchased diversity
-To remove the effect of the confounders and establish a causality link between features, we have used a method called Generalized Propensity Score matching.
+To remove the effect of the confounders and establish a causality link between features, we have used a method called Generalized Propensity Score (GPS) matching. This method allows to compare areas that appear to be quite similar except for the two features for which we aim to determine if a causality link exists. By comparing such areas together, it reduces the effect of the other features (potential confounders) on the causality link we look at. 
+
+Therefore, to determine if some causality exists between ethnicities diversity and food categories purchased diversity, we used this approach and consider the most correlated features to the food categories purchased diversity as potential confounders. Eventually, to assess the causality between the two features of interest and its significativity, we used a metric based on the 95% confidence interval of the causal curve obtained after the GPS matching. The more positive the feature, the more significant is the causality effect.
+
+The results obtained with this approach suggest that ethnic diversity indeed has an effect on food product categories diversity.
+
+But is it the only feature with such an effect?
+
+Well, to determine this, we performed this process on all the features correlated to the food product categories diversity. The results are displayed in the following table where the features have been ranked by their absolute correlation with the food product categories diversity. The different information present on this table are the name of the feature, its correlation value, its causality significance value and their ranking for those different values. The difference in rank is computed by doing the rank of the correlation - the rank of the causality significance. It allows to observe that a high correlation does not necessarily mean that there will be a causality link between the variables. Eventually, the feature for which no causal effect has been observed appears in pink.
 
 {% include corr_caus_rank.html %}
 
+These results are quite interesting.
+
+- We can see that the ethnic diversity feature (Ethnic_Group;h_ethnicities_norm;2011) was 9th in the correlation strength rankings and jumps to 3rd in the causal significance ranking.
+- The feature representing a very good health for the population in the area (Health;Very_good_or_Good_health_(ratio);2011) loses 42 places and ends up with a negative causality significance metric, which shows that its correlation with the food purchase entropy was actually due to confounders.
+
+Looking at the features we explored with the previous plots we can observe that:
+
+- The richness feature (Household_Income,2011/12;Median_Annual_Household_Income_estimate_(£)) is ranked 10th and then 12th. These results suggest that it has less impact on food purchase diversity than ethnic diversity.
+- The age (avg_age) goes from 20th to 7th, suggesting that its effect on food purchase diversity is less affected by confounders than most other features.
+- The employment rate (Economic_Activity;Employment_ratio;2011) is ranked 33th and then 27th. It has a significant effect on food product categories diversity but less so than what we initially expected.
+
 ### Causality of ethnicities with food categories purchased in Tesco
+Now let's come back to our main question of interest: Is there really a causal link between our ethnicity and which food prodicts category we are purchasing in Tesco stores?
+
+
 {% include caus_bar_plot_all_items.html %}
 
 {% include caus_bar_plot_all_eth.html %}
@@ -106,12 +128,11 @@ To remove the effect of the confounders and establish a causality link between f
 ### Causal curve for some Tesco items
 {% include cdcr_items.html %}
 
-## Conclusion
+## Conclusion - Is your Ethnicity reflected in your Food Purchase?
 
 ## Limitations
 
 ## Fun facts
 Is the cliché of the British drinking its cup of tea only a cliché ?!? Naaa, it's just probably that Tesco has not the right standing to be involved in this art.
-
 
 
