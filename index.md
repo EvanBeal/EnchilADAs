@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Is your Ethnicity reflected in your Food Purchase?
+title: Is Ethnicity reflected in Food Purchase?
 cover-img: "/assets/img/fish_chips.jpg"
 subtitle: Analysis of Tesco and socio-economic data of Londoners
 ---
@@ -22,10 +22,7 @@ Our main question of interest being to find out whether the appartenance of cust
 
 Throughout this datastory, you will have the opportunity to observe the links between different combination of ethnic groups prevalence and food categories purchased, guided by the main results we obtained, in order to establish some food purchase patterns that appear to be specific of certain ethnic groups. 
 
-Following the common thread of our analysis based on the following pairs of features you will be able to draw your own conclusion on the examples that spark your curiosity:
-- White ethnic group and ready made food category
-- Black ethnic group and fruits & vegetables food category
-- Asian ethnic group and fats oils food category
+Following the common thread of our analysis based on the following pairs of features (white ethnic group and ready made food category, black ethnic group and fruits & vegetables food category, asian ethnic group and fats oils food category) you will be able to draw your own conclusion on the examples that spark your curiosity.
 
 ## Correlation analysis
 ### Correlation of ethnicities with food categories purchased in Tesco
@@ -118,21 +115,30 @@ Looking at the features we explored with the previous plots we can observe that:
 - The employment rate (Economic_Activity;Employment_ratio;2011) is ranked 33th and then 27th. It has a significant effect on food product categories diversity but less so than what we initially expected.
 
 ### Causality of ethnicities with food categories purchased in Tesco
-Now let's come back to our main question of interest: Is there really a causal link between our ethnicity and which food prodicts category we are purchasing in Tesco stores?
+Now that we have clearly identified that the more diverse the population is (in terms of ethnicity), the more diverse the food purchase will be, let's get down to a finer level of granularity and come back to our main question of interest: Can the prevalence of a certain ethnic group cause a significative effect in purchased product diversity ?
 
+By using the GPS matching, accounting for the potential confounders, we computed the causal significance metric between the different ethnicities and food products categories. 
+Those results are represented in the following two graphs with once again two visualizations. One allowing to observe the causality links between a specific ethnicity and all the different product categories and the other allowing to observe what are the ethnicities that are causally linked to the food product chosen. In addition, to the causality significance metric, the correlation values computed previously are reported to observe whether the causality link is positive (cyan) or negative (red) and also to see that a high correlation is not necessary resulting into a high causality significance.
 
 {% include caus_bar_plot_all_items.html %}
 
 {% include caus_bar_plot_all_eth.html %}
 
-### Causal curve for some Tesco items
+Coming back to our three features pairs of interest, what we can conclude following this causality analysis is that:
+- The white ethnicity has a causal link with the fraction of food products represented by the ready made meal category. The correlation between those two features being positive, this means that a greater percentage of population from the white ethnic group leads to a higher fraction of ready made meal in the food purchase.
+
+- The black ethnicity has a causal link with the fraction of food products represented by the fruits and vegetables category. The correlation between those two features being negative, this means that a greater percentage of population from the black ethnic group leads to a smaller fraction of fruits and vegetables in the food purchase.
+
+- The asian ethnicity was positively correlated with the percentage of fats and oils purchased. However, no causal link can be identified between those two features meaning that the correlation observed was actually due to confounders.
+
+### Causal curve for some food categories and ethnicities
+To observe into details what those causal links look like, we can observe the causal curves resulting from the GPS matching. Those curves allow to observe the direct effect of an increase in a certain ethnic group to the proportion of the food category purchased. The 95% confidence interval is also reported. If an horizontal straight line can be drawn inside this confidence interval, this means that there is no significant causal effect. This is indeed what we can observe when looking at the asian ethnic group with the fats and oils products category.
+
 {% include cdcr_items.html %}
+
+With the results obtained for the white ethnicity and the ready made meals category, we can observe for instance that an incrase from 45% to 80% of population from the white ethnic group leads to an increase from 6% to 7% in the proportion of the ready made meal in the food products category purchased in Tesco stores.
 
 ## Conclusion - Is your Ethnicity reflected in your Food Purchase?
 
-## Limitations
-
-## Fun facts
-Is the cliché of the British drinking its cup of tea only a cliché ?!? Naaa, it's just probably that Tesco has not the right standing to be involved in this art.
 
 
